@@ -1,0 +1,124 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp( MaterialApp( home: MyApp(),));
+}
+
+class MyApp extends StatefulWidget{
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State< MyApp>{
+  
+  bool checkedvalue= false;
+
+  @override
+  Widget build( BuildContext context){
+
+    return MaterialApp(
+      home: Scaffold(
+        body: Column(
+
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+          padding: new EdgeInsets.all( 44.0),
+          child: Column(children: [
+
+              Text(
+                    "SIGN IN TO YOUR ACCOUNT",
+                    textAlign: TextAlign.center, 
+                    style: TextStyle(
+                        letterSpacing: 4,
+                    ),
+                  ),
+
+              SizedBox(height: 30,),
+
+              Container(
+                color: Color(0xffefeeee),
+                child: Column(
+                  children: [
+                    TextFormField(
+                      decoration: InputDecoration
+                      (
+                        labelText: 'nguyenvana@st.vimaru.edu.vn',
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide( 
+                            color: Color(0xfff3f1f1))
+                        ),
+                        
+                      ),
+                      onChanged: ( String value) {
+                    
+                      }
+              ),
+                  ],
+                )
+              ),
+
+              SizedBox(height: 20,),
+
+              Container(
+                color: Color(0xfff3f1f1),
+                child: Column(
+                  children: [
+                    TextFormField(
+                    keyboardType: TextInputType.visiblePassword,
+                    decoration: InputDecoration(
+                      labelText: '* * * * * * * *',                     
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide( color: Color(0xfff3f1f1))
+                      ),
+                  ),
+                  onChanged: ( String value) {
+                    
+                  }),
+                  ],
+                )
+              ),
+
+                  SizedBox(height: 20,),
+              
+              Container(
+                width: double.infinity,
+                alignment: Alignment.centerLeft,
+                child: OutlinedButton.icon( 
+                      style:  OutlinedButton.styleFrom(
+                      backgroundColor:  Color(0xffffffff),
+                      ),
+                      onPressed: () {},
+                      icon: Icon( Icons.check_box, size: 20, color: Color(0xff4932cd)), 
+                      label: Text( 'Keep me signed in', style: TextStyle( color: Color(0xff000000))),
+                ),
+              ),
+
+                  SizedBox(height: 30,),
+            
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      minimumSize: Size(400, 60),
+                      backgroundColor:  Color(0xff4932cd),
+                  ),
+                  child: Text( 'SIGN IN', style: TextStyle( fontSize: 20, color: Color(0xffffffff)) ),
+                  onPressed: () {},
+                    
+              ),
+
+                  SizedBox(height: 30,),
+
+              Text(
+                    "Forgot your password?",
+                    textAlign: TextAlign.center,
+                  ),
+          
+          ]),
+        )
+          ],
+        )
+      )
+    );
+  }
+}
